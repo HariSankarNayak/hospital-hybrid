@@ -1,0 +1,37 @@
+<div class="ion-padding-horizontal ion-margin-top">
+  <h2 class="page-title">Your Appointments</h2>
+</div>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="appointment-section">
+    <h6 class="ion-padding-horizontal section-title"><b>List</b></h6>
+
+    <div *ngIf="empty != 0" class="ion-padding-horizontal">
+      <h6>No Appointment Found</h6>
+    </div>
+
+    <div *ngFor="let item of items">
+      <ion-card (click)="appointmentProfile(item.app_id)">
+        <ion-row>
+          <ion-col>
+            <ion-label>
+              <h5><b>Dr. {{item.doctor_lastname}} {{item.doctor_firstname}}</b></h5>
+              <h6>{{item.speciality_name}}</h6>
+              <ion-badge color="success">{{item.app_date}}, {{item.app_time}}</ion-badge>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+    </div>
+  </div>
+
+</ion-content>

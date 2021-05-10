@@ -1,0 +1,80 @@
+ion-footer {
+    padding: 8px 5px;
+    ion-button {
+        height: 45px;
+        font-weight: 500;
+        text-transform: capitalize;
+        border-radius: 8px;
+    }
+}
+
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}
+
+.profile-card {
+    background: var(--ion-color-tertiary);
+    background: -webkit-linear-gradient(to right, #653EE6, #7044ff);
+    background: linear-gradient(to right, #653EE6, #7044ff);
+    padding-top: 20px;
+    padding-bottom: 100px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+    color: white;
+    padding: 0 16px;
+
+    ion-card {
+        margin: 20px 0;
+        background-color: white;
+    }
+
+    ion-img {
+        height: 180px;
+    }
+
+    .profile-name {
+        padding-top: 50px;
+        padding-left: 20px;
+        text-align: left;
+
+        h3 {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        p {
+            font-weight: 500;
+            color: var(--ion-color-light);
+        }
+    }
+}
+
+.doctor-details {
+    .details-title {
+        margin-right: 5px;
+    }
+}
+
+.booking-wrap {
+    .date-picker {
+        padding: 0 35%;
+    }
+}
+
+.doctor-info {
+    margin-top: 12px;
+    
+    ion-col {
+        padding-left: 0;
+    }
+    small {
+        color: var(--ion-color-medium);
+        font-weight: 600;
+    }
+    h6 {
+        margin: 0;
+        font-weight: 600;
+        font-size: 14pt;
+    }
+}

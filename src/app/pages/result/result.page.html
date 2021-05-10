@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/search"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search Result</ion-title>
+  </ion-toolbar>
+    <ion-searchbar animated [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>Clinic Result</ion-list-header>
+
+    <ion-item *ngFor="let item of itemsClinic" (click)="clinicProfile(item.clinic_id)">
+      <ion-label>
+        <h2>{{item.clinic_name}}</h2>
+        <p>{{item.clinic_address}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+  
+  <ion-list>
+    <ion-list-header>Doctor Result</ion-list-header>
+
+    <ion-item *ngFor="let item of itemsDoctor" (click)="doctorProfile(item.doctor_id)">
+      <ion-avatar slot="start">
+        <img src="{{imgURL}}{{item.clinic_id}}/doctor/{{item.doctor_avatar}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.doctor_lastname}} {{item.doctor_firstname}}</h2>
+        <h3>{{item.speciality_name}}</h3>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
